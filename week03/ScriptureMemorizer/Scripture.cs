@@ -31,13 +31,14 @@ namespace ScriptureMemorizer
 
             for (int i = 0; i < count; i++)
             {
+                int indexToHide = _random.Next(availableWords.Count);
+                availableWords[indexToHide].Hide();
+                availableWords.RemoveAt(indexToHide);
+
                 if (availableWords.Count == 0)
                 {
                     break;
                 }
-                int indexToHide = _random.Next(availableWords.Count);
-                availableWords[indexToHide].Hide();
-                availableWords.RemoveAt(indexToHide);
             }
         }
 
